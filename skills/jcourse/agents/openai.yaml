@@ -1,0 +1,4 @@
+interface:
+  display_name: "jCourse"
+  short_description: "Use the jCourse course community API"
+  default_prompt: "Use $jcourse to search courses and summarize useful review signals."
