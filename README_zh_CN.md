@@ -1,24 +1,24 @@
-# jCourse Codex Skill
+# jCourse Skill
 
 [English](README.md)
 
-这个仓库发布 `jcourse` Codex skill。安装后，agent 可以按 jCourse API 的约定搜索课程和教师、查看课程详情、总结评价、比较课程、关注或忽略课程、管理选课记录、创建或更新评价、给评价投票，以及执行其他需要认证的 jCourse 工作流。
+这个仓库发布 `jcourse` skill。安装后，agent 可以按 jCourse API 的约定搜索课程和教师、查看课程详情、总结评价、比较课程、关注或忽略课程、管理选课记录、创建或更新评价、给评价投票，以及执行其他需要认证的 jCourse 工作流。
 
 默认服务地址：`https://course.sjtu.plus`。
 
 ## 让 Agent 一键安装
 
-把下面这句话发给 Codex：
+把下面这句话发给 Agent：
 
 ```text
 Use $skill-installer to install https://github.com/SJTU-jCourse/jcourse-skill/tree/main/skills/jcourse
 ```
 
-安装完成后，重启 Codex 让新 skill 生效。
+安装完成后，重启 Agent 让新 skill 生效。
 
 ## 手动安装
 
-也可以从你的 Codex skills 目录直接运行安装脚本：
+也可以从你的 Agent skills 目录直接运行安装脚本：
 
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
@@ -27,17 +27,17 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 
 安装脚本会把 skill 复制到 `$CODEX_HOME/skills/jcourse`。如果没有设置 `CODEX_HOME`，通常会安装到 `~/.codex/skills/jcourse`。
 
-安装后需要重启 Codex。
+安装后需要重启 Agent。
 
 ## 使用方式
 
-处理 jCourse 相关任务时，可以明确要求 Codex 使用这个 skill：
+处理 jCourse 相关任务时，可以明确要求 Agent 使用这个 skill：
 
 ```text
 Use $jcourse to search jCourse for "数据结构" and list the top matching courses with rating count and teacher.
 ```
 
-个性化或会修改数据的操作需要 jCourse 用户 API Key。Codex 会在需要时向你索取，并使用下面的请求头：
+个性化或会修改数据的操作需要 jCourse 用户 API Key。Agent 会在需要时向你索取，并使用下面的请求头：
 
 ```http
 Authorization: Bearer <api_key>
@@ -62,13 +62,13 @@ skills/jcourse/
 
 ## 验证安装
 
-安装并重启 Codex 后，可以用下面的提示词验证：
+安装并重启 Agent 后，可以用下面的提示词验证：
 
 ```text
 Use $jcourse to search jCourse for "数据结构" and list the top matching courses with rating count and teacher.
 ```
 
-如果要验证认证流程，可以让 Codex 先检查 API Key：
+如果要验证认证流程，可以让 Agent 先检查 API Key：
 
 ```text
 Use $jcourse with this API key: <key>. Verify my jCourse identity with /api/auth/me.
