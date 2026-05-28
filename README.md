@@ -1,24 +1,24 @@
-# jCourse Codex Skill
+# jCourse Skill
 
 [中文说明](README_zh_CN.md)
 
-This repository publishes the `jcourse` skill for Codex agents. It teaches an agent how to use the jCourse course community API to search courses and teachers, inspect course details, summarize reviews, compare courses, manage follows or ignores, create or update reviews, vote on reviews, and operate other authenticated jCourse workflows over HTTP.
+This repository publishes the `jcourse` skill for AI agents. It teaches an agent how to use the jCourse course community API to search courses and teachers, inspect course details, summarize reviews, compare courses, manage follows or ignores, create or update reviews, vote on reviews, and operate other authenticated jCourse workflows over HTTP.
 
 Default service URL: `https://course.sjtu.plus`.
 
 ## One-Click Agent Install
 
-Tell Codex:
+Tell your agent:
 
 ```text
 Use $skill-installer to install https://github.com/SJTU-jCourse/jcourse-skill/tree/main/skills/jcourse
 ```
 
-After installation, restart Codex so the new skill is loaded.
+After installation, restart your agent so the new skill is loaded.
 
 ## Manual Install
 
-If you want to install it yourself, run the Codex skill installer helper from your Codex skills directory:
+If you want to install it yourself, run the Codex skill installer helper from your skills directory:
 
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
@@ -31,13 +31,13 @@ Restart Codex after installing.
 
 ## Usage
 
-Ask Codex to use the skill explicitly when working with jCourse:
+Ask your agent to use the skill explicitly when working with jCourse:
 
 ```text
 Use $jcourse to search for machine learning courses and summarize the most useful review signals.
 ```
 
-For personalized or mutating actions, provide a jCourse user API key when Codex asks for it. The skill uses:
+For personalized or mutating actions, provide a jCourse user API key when agent asks for it. The skill uses:
 
 ```http
 Authorization: Bearer <api_key>
@@ -62,7 +62,7 @@ skills/jcourse/
 
 ## Verify
 
-After installing and restarting Codex, use a prompt like:
+After installing and restarting agent, use a prompt like:
 
 ```text
 Use $jcourse to search jCourse for "数据结构" and list the top matching courses with rating count and teacher.
